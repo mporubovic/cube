@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="engine/main.js" type="module"></script>
+    <script src="lib/qrcode.js"></script>
+    
+    <meta charset="UTF-8">
+    <title>Cube</title>
+</head>
+<body>
+    <div id="overlay">
+        <div id="qrcode-wrapper">
+            <div id="qrcode"></div>
+            <button id="sound-button">Click me for sound</button>
+        </div>
+    </div>
+    <div id="renderer-output">
+        <div id="webgl">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+// var runningLocally = true
+var runningLocally = false
+</script>
+
+<style>
+html, * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+#overlay {
+    position: fixed;
+    background-color: rgba(0,0,0,0.6);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrcode-wrapper {
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sound-button {
+    margin-top: 10px;
+}
+</style>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="joystick">
+        <svg id="joystick-circle" width="240" height="240">
+            <circle cx="120" cy="120" r="120" fill="#797979"></circle>
+        </svg>
+    
+        <svg id="joystick-background" width="600" height="600">
+            <circle cx="300" cy="300" r="300" stroke="rgba(0,0,0,0.05)" stroke-width="3" fill="rgba(0,0,0,0.5)"></circle>
+        </svg>
+    </div>
+
+    <div id="menu">
+        <div id="zoom" class="menu-item">
+            <div class="menu-title">
+                Zoom
+            </div>
+
+            <div>
+                <img id="zoom-out" src="minus.svg" class="menu-icon">
+                <img id="zoom-in" src="plus.svg" class="menu-icon">
+            </div>
+
+        </div>
+
+        <div id="rotate" class="menu-item">
+            <div class="menu-title">
+                Rotate
+            </div>
+            <div class="menu-horizontal">
+                <img id="rotate" src="rotate.svg" class="menu-icon">
+            </div>
+        </div>
+
+        <div id="color" class="menu-item">
+            <div class="menu-title">
+                Color
+            </div>
+            <div class="menu-horizontal">
+                <div id="color-red" class="menu-icon"></div>
+                <div id="color-blue" class="menu-icon"></div>
+                <div id="color-orange" class="menu-icon"></div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+
+
+<script>
+// var runningLocally = true
+var runningLocally = false
+document.body.style.height = window.innerHeight + 'px'
+</script>
+
+<script src="./control.js" type="module"></script>
+
+
+</html>
+
+<style>
+
+html, * {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+body {
+    background-color:#1e1e1e;
+    touch-action: none;
+}
+
+#joystick-circle {
+    position: absolute;
+    z-index: 10;
+}
+
+#joystick-background {
+    position: absolute;
+    z-index: 9;
+    /* left: 200px; */
+    display: block;
+}
+
+#joystick {
+    position: fixed;
+    /* left: 500px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+}
+
+#menu {
+    position: fixed;
+    bottom: 10px;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+}
+
+.menu-title {
+    margin-bottom: 5px;
+    user-select: none;
+    
+}
+
+.menu-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 100px;
+    width: 100px;
+    user-select: none;
+}
+
+.menu-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+#color-red {
+    background-color: red;
+}
+
+#color-blue {
+    background-color: blue;
+}
+
+#color-orange {
+    background-color: orange;
+}
+
+</style>

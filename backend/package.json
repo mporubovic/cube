@@ -1,0 +1,8 @@
+{
+    "name": "cube-server",
+    "version": "0.0.1",
+    "description": "Cube server",
+    "dependencies": {
+        "ws": "^7.5.3"
+    }
+}
