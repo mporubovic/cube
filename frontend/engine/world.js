@@ -36,6 +36,8 @@ export default class World {
         this.stats = new Stats
         document.body.appendChild(this.stats.domElement)
 
+        this.ios15 = navigator.userAgent.includes(" 15") // ie. iPhone OS 15_1 like Mac OS X
+
         this.cube = new Cube(this)
         this.scene.add(this.cube)
     }
@@ -156,7 +158,7 @@ export default class World {
     }
 
     __resizeRendererToViewportSize() {
-        let pixelRatio = window.devicePixelRatio
+        let pixelRatio = this.ios15 ? 1 : window.devicePixelRatio  // temp bug fix for ios15
         let width = this.renderer.domElement.clientWidth * pixelRatio | 0
         let height = this.renderer.domElement.clientHeight * pixelRatio | 0
         let resize = this.renderer.domElement.width !== width || this.renderer.domElement.height !== height
