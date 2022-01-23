@@ -6,6 +6,9 @@ import Stats from "../lib/stats.module.js"
 import * as TWEEN from '../lib/tween.js'
 import Cube from "./Cube.js"
 
+import * as THREE from "../lib/three/build/three.module.js"
+window.THREE = THREE
+
 
 
 export default class World {
