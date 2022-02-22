@@ -71,7 +71,7 @@ window.addEventListener('pointermove', (e) => {
     let solutionOne, solutionTwo
 
     {
-        let x = Math.sqrt( (4) * (1 + m*m) * (r*r) ) / ( (2) * (1 + m*m) )
+        let x = Math.sqrt( (1 + m*m) * (r*r) ) / (1 + m*m)
         let y = m*x
         solutionOne = {x, y}
     }
