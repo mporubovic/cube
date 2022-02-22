@@ -123,7 +123,7 @@ requestAnimationFrame(tick)
 let channel = runningLocally ? 1 : location.search.split("=")[1]
 
 console.log('channel', channel)
-let server = runningLocally ? '10.14.148.88' : 'cube.porubovic.sk'
+let server = runningLocally ? ip : 'cube.porubovic.sk'
 let socket = new WebSocket(`ws://${server}:2001/?channel=${channel}?control=true`)
 
 let cooldown = false

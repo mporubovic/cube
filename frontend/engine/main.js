@@ -7,7 +7,7 @@ const connection = new Connection(world)
 world.startRender()
 
 new QRCode('qrcode', {
-    text: `http://${runningLocally ? '10.14.148.88' :  connection.server}/control/index.html?channel=`+connection.channel,
+    text: `http://${runningLocally ? ip :  connection.server}/control/index.html?channel=`+connection.channel,
     width: 200,
     height: 200
 })
