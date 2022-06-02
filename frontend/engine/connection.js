@@ -3,7 +3,7 @@ export default class Connection {
         this.server = runningLocally ? '127.0.0.1' : 'cube.porubovic.sk'
         console.log('Connecting to WebSocket server', this.server)
 
-        this.socket = new WebSocket(`ws://${this.server}:2001/`)
+        this.socket = new WebSocket(`wss://${this.server}/ws/`)
         window.socket = this.socket
 
         this.channel = runningLocally ? 1 : Math.round(Math.random() * 1000000)

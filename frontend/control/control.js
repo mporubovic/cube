@@ -124,7 +124,7 @@ let channel = runningLocally ? 1 : location.search.split("=")[1]
 
 console.log('channel', channel)
 let server = runningLocally ? ip : 'cube.porubovic.sk'
-let socket = new WebSocket(`ws://${server}:2001/?channel=${channel}?control=true`)
+let socket = new WebSocket(`wss://${server}/ws/?channel=${channel}?control=true`)
 
 let cooldown = false
 
